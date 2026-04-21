@@ -23,7 +23,7 @@ const BG_COLORS = ["rgba(255,0,0,0.3)","rgba(0,255,0,0.3)","rgba(0,0,255,0.3)","
 const BORDER_COLORS = ["magenta","lime","red","cyan","yellow","blue"];
 const SIZES = ["12px","14px","16px","18px","22px"];
 const EMOJI_SIZES = ["40px","60px","80px","30px","50px"];
-const ASPECTS = [{w:"100%",h:"60px"},{w:"80px",h:"160px"},{w:"100%",h:"100%"},{w:"32px",h:"32px"}];
+const ASPECTS = [{w:"100%",h:"60px"},{w:"80px",h:"160px"},{w:"100%",h:"80px"},{w:"32px",h:"32px"}];
 
 // ====== RENDER FILTERS ======
 const filtersEl = document.getElementById("filters");

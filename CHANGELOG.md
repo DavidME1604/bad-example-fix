@@ -13,6 +13,7 @@
 | 7 | Marquees detenidos (textos estáticos visibles) | styles.css | Easy to learn |
 | 8 | Pop-ups automáticos eliminados | script.js | Effective |
 | 9 | Documentación en CHANGELOG.md | CHANGELOG.md | — |
+| 10 | Eliminados `blink` y `rainbow-text` | index.html, script.js, styles.css | Easy to learn |
 
 ---
 
@@ -88,15 +89,21 @@
 **Objetivo:** —  
 **Qué se hizo:** Este archivo.
 
+### Cambio 10 — Eliminados `blink` y `rainbow-text`
+**Archivos:** index.html, script.js, styles.css  
+**Objetivo:** Easy to learn  
+**Qué se hizo:**
+- Quitada clase `rainbow-text` del h1 del header, del h2 del sidebar y de los nombres de producto (template JS).
+- Quitada clase `blink` del párrafo del contador de visitantes.
+- Eliminadas de styles.css las reglas `@keyframes blink`, `.blink`, `@keyframes rainbow` y `.rainbow-text`.
+
 ---
 
 ## Qué NO se tocó deliberadamente
 
 | Elemento | Por qué se dejó |
 |----------|----------------|
-| Animación `blink` | No estaba entre los 5 puntos votados; el visitor-counter y otros elementos la usan inofensivamente |
 | Animación `shake` en tarjetas | No votado; es parte del carácter visual del sitio |
-| Animación `rainbow-text` | No votado; afecta títulos decorativos |
 | Rotación de tarjetas de producto (`rotate`) | No votado |
 | Fuentes Creepster / Dancing Script / Papyrus en elementos individuales | No votado; se cambia solo la fuente base del body |
 | Nombres chistosos de productos | Por diseño (parodia humorística) |
