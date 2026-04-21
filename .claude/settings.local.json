@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check \"C:\\\\Users\\\\david\\\\Documents\\\\7mo semestre\\\\HCI\\\\electro-caos\\\\script.js\")"
+    ]
+  }
+}

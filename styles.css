@@ -1,0 +1,354 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+::-webkit-scrollbar { width: 20px; }
+::-webkit-scrollbar-track { background: lime; }
+::-webkit-scrollbar-thumb { background: magenta; border: 3px solid cyan; }
+
+.papyrus { font-family: Papyrus, fantasy; }
+.creepster { font-family: 'Creepster', cursive; }
+.dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
+
+/* Animations */
+
+@keyframes shake {
+  0%,100%{transform:translateX(0)}25%{transform:translateX(-3px) rotate(-2deg)}75%{transform:translateX(3px) rotate(2deg)}
+}
+.shake { animation: shake 0.4s infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.marquee { overflow: hidden; white-space: normal; width: 100%; }
+.marquee-track { display: inline-block; }
+.marquee-fast { }
+.marquee-slow { }
+
+/* Top banner */
+.top-banner {
+  background: black;
+  padding: 12px;
+  border-bottom: 4px solid red;
+}
+.banner-warning {
+  color: red;
+  text-align: center;
+  font-family: 'Creepster', cursive;
+  font-size: 22px;
+}
+.banner-sub {
+  color: lime;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Navbars */
+.navbar-1 {
+  background: cyan;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px;
+  border-bottom: 4px solid magenta;
+  font-family: Papyrus, fantasy;
+}
+.navbar-1 a {
+  color: #111827;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+.navbar-2 {
+  background: lime;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: space-around;
+  padding: 4px;
+  border-bottom: 4px solid red;
+}
+.navbar-2 span {
+  color: blue;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 0 8px;
+}
+
+/* Header */
+.page-header {
+  background: rgba(255,0,255,0.4);
+  padding: 16px 8px;
+  text-align: center;
+  border-bottom: 4px solid lime;
+}
+.big-title { font-size: 32px; }
+.subtitle { font-family: Papyrus, fantasy; color: blue; margin-top: 6px; }
+.cart-pill {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  background: cyan;
+  color: red;
+  border: 2px solid magenta;
+  font-size: 18px;
+}
+.cart-count { font-size: 24px; font-weight: bold; }
+
+/* Floating nav */
+.floating-nav {
+  position: fixed;
+  top: 40%; left: 30%;
+  width: 40%;
+  background: rgba(255,0,255,0.9);
+  border: 4px solid red;
+  padding: 16px;
+  z-index: 50;
+  transform: rotate(-3deg);
+  font-family: Papyrus, fantasy;
+}
+.floating-title { text-align: center; font-size: 22px; font-weight: bold; }
+.floating-buttons { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-top: 8px; }
+.floating-buttons button {
+  background: lime;
+  color: purple;
+  border: 2px solid black;
+  padding: 4px 8px;
+  font-family: 'Comic Neue', cursive;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: inherit;
+}
+
+/* Layout */
+.layout { display: flex; }
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  padding: 12px;
+  background: rgba(0,255,0,0.3);
+  border-right: 4px solid magenta;
+  min-height: 100vh;
+}
+.sidebar-title { text-align: center; font-family: Papyrus, fantasy; font-size: 20px; }
+.filter-group {
+  margin-top: 12px;
+  padding: 8px;
+  border: 2px solid red;
+  background: rgba(255,255,0,0.5);
+}
+.filter-group .label {
+  font-family: 'Creepster', cursive;
+  color: purple;
+  font-size: 14px;
+}
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: darkgreen;
+  cursor: inherit;
+}
+.premium-filter {
+  margin-top: 16px;
+  padding: 8px;
+  background: red;
+  border: 2px solid cyan;
+  color: white;
+  text-align: center;
+  font-family: Papyrus, fantasy;
+  font-size: 12px;
+}
+
+.main { flex: 1; padding: 16px; }
+
+/* Offer banner */
+.offer-banner {
+  background: black;
+  border: 4px solid lime;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.offer-text { color: lime; font-family: Papyrus, fantasy; font-size: 20px; }
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.product-card {
+  padding: 12px;
+  border: 4px solid;
+}
+.product-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+.product-name { font-weight: bold; }
+.product-cat { font-size: 12px; color: brown; font-family: 'Dancing Script', cursive; }
+.price-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px;
+  background: purple;
+  color: yellow;
+  border: 2px solid lime;
+  font-family: 'Comic Neue', cursive;
+  font-size: 13px;
+  cursor: inherit;
+}
+.price-display {
+  text-align: center;
+  font-family: Papyrus, fantasy;
+  font-size: 24px;
+  color: red;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.action-row { display: flex; gap: 2px; margin-top: 8px; }
+.btn-buy, .btn-empty {
+  background: lime;
+  color: black;
+  border: 2px solid red;
+  padding: 4px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: inherit;
+}
+.btn-buy { flex: 1; }
+.btn-empty { flex: 1.3; }
+.rating { text-align: center; font-size: 12px; color: gray; font-family: 'Dancing Script', cursive; margin-top: 4px; }
+
+/* Visitor counter */
+.visitor-counter {
+  margin-top: 24px;
+  padding: 12px;
+  background: navy;
+  border: 4px solid yellow;
+  text-align: center;
+}
+.visitor-num { color: lime; font-size: 20px; }
+.visitor-disclaimer { color: cyan; font-size: 10px; font-family: Papyrus, fantasy; }
+
+/* Testimonials */
+.testimonials {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(255,255,0,0.5);
+  border: 4px solid red;
+}
+.testimonials-title { text-align: center; color: purple; font-size: 20px; }
+.testimonial-text { color: darkgreen; }
+.testimonials-disclaimer { text-align: center; font-size: 11px; color: gray; margin-top: 4px; }
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  background: red;
+  border-top: 4px solid yellow;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  z-index: 40;
+}
+.bottom-nav button {
+  background: yellow;
+  color: purple;
+  border: 1px solid green;
+  padding: 4px 8px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: inherit;
+}
+
+.toggle-floating {
+  position: fixed;
+  bottom: 56px; right: 8px;
+  background: gray;
+  color: gray;
+  border: 1px solid gray;
+  opacity: 0.3;
+  font-size: 11px;
+  padding: 2px 4px;
+  z-index: 50;
+  cursor: inherit;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+.modal-overlay.popup-overlay { background: rgba(255,0,255,0.5); z-index: 90; }
+
+.modal {
+  background: yellow;
+  border: 4px solid magenta;
+  padding: 24px;
+  max-width: 420px;
+  width: 90%;
+  transform: rotate(2deg);
+}
+.modal.popup-modal {
+  background: lime;
+  border-color: red;
+  transform: rotate(-5deg);
+}
+.modal h3 {
+  text-align: center;
+  font-family: 'Creepster', cursive;
+  color: red;
+  font-size: 22px;
+}
+.modal .question {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 24px;
+  font-family: Papyrus, fantasy;
+  color: darkblue;
+}
+.modal input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  border: 4px solid lime;
+  background: cyan;
+  color: red;
+  font-family: 'Comic Neue', cursive;
+  font-size: 16px;
+}
+.modal-actions { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.modal-actions button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border: 2px solid;
+  cursor: inherit;
+}
+.btn-verify { background: lime; color: purple; border-color: red; font-family: Papyrus, fantasy; }
+.btn-give-up { background: red; color: white; border-color: yellow; font-family: 'Comic Neue', cursive; }
+.btn-yes { background: yellow; border-color: red; font-family: 'Comic Neue', cursive; font-size: 13px; }
+.btn-close-trick { background: red; color: red; border-color: red; font-size: 11px; font-family: 'Comic Neue', cursive; }
+.popup-trick-note { text-align: center; font-size: 11px; margin-top: 8px; color: brown; font-family: 'Dancing Script', cursive; }
+.wrong { text-align: center; font-weight: bold; color: red; font-size: 22px; margin-top: 8px; }
