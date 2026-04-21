@@ -13,25 +13,31 @@
 
 
 <!-- Navbar 1 -->
+<!-- [Cambio 2] Se eliminaron navbar-2, floating-nav, bottom-nav y toggle-floating.
+     Solo queda esta navbar. Los 3 enlaces absurdos fueron reetiquetados:
+     "QUEJAS 😡" → "OFERTAS 💸" | "FAQ (sin respuestas)" → "FAQ" | "CONTACTO (fax only)" → "CONTACTO" -->
 <nav class="navbar-1">
   <a href="#">INICIO 🏠</a>
   <a href="#">ELECTRÓNICA ⚡</a>
-  <a href="#">OFERTAS 💸</a>
-  <a href="#">FAQ</a>
-  <a href="#">CONTACTO</a>
+  <a href="#">OFERTAS 💸</a>   <!-- antes: "QUEJAS 😡" -->
+  <a href="#">FAQ</a>           <!-- antes: "FAQ (sin respuestas)" -->
+  <a href="#">CONTACTO</a>     <!-- antes: "CONTACTO (fax only)" -->
 </nav>
 
 <!-- Header -->
 <header class="page-header">
   <div class="marquee"><div class="marquee-track">
+    <!-- [Cambio 10] Quitada clase rainbow-text: el título ya no cambia de color infinitamente -->
     <h1 class="creepster big-title">🔥💀 ELECTRO-CAOS MEGA STORE 💀🔥</h1>
   </div></div>
+  <!-- [Cambio 4] cart-count inicia en 0 y sin clase blink; antes era "?" con blink -->
   <div class="cart-pill">🛒 Carrito: <span class="cart-count">0</span> artículos</div>
 </header>
 
 <div class="layout">
   <!-- Sidebar -->
   <aside class="sidebar">
+    <!-- [Cambio 10] Quitada clase rainbow-text del h2 del sidebar -->
     <h2 class="sidebar-title">🔍 FILTROS AVANZADOS 🔍</h2>
     <div id="filters"></div>
   </aside>
@@ -40,6 +46,7 @@
   <main class="main">
     <div class="offer-banner">
       <div class="marquee"><div class="marquee-track marquee-fast">
+        <!-- [Cambio 3] Oferta real en lugar de "COMPRA 3 Y PAGA 5, envío a Marte, garantía 0 días" -->
         <span class="offer-text">🚨 OFERTA: Envío gratis en compras sobre $50 · 10% de descuento en tu primera compra · Garantía de 12 meses 📦</span>
       </div></div>
     </div>
@@ -47,6 +54,7 @@
     <div id="product-grid" class="product-grid"></div>
 
     <div class="visitor-counter">
+      <!-- [Cambio 10] Quitada clase blink del párrafo del contador -->
       <p class="visitor-num">👁️ Visitantes en línea: <span id="visitor-count">0</span> 👁️</p>
     </div>
 

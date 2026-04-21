@@ -1,9 +1,11 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* [Cambio 5] Body simplificado: fuente del sistema, fondo gris muy claro, texto oscuro.
+   Original: Comic Sans, fondo amarillo, gradientes magenta/cyan, cursor payaso. */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #F9FAFB;
-  color: #111827;
+  font-family: system-ui, -apple-system, sans-serif; /* antes: 'Comic Neue', Comic Sans */
+  background: #F9FAFB; /* antes: yellow con gradientes de colores */
+  color: #111827;      /* color de texto base legible */
   min-height: 100vh;
   padding-bottom: 80px;
 }
@@ -27,10 +29,13 @@ body {
   from { transform: translateX(100%); }
   to { transform: translateX(-100%); }
 }
+/* [Cambio 7] Marquees detenidos: se eliminó la animación de desplazamiento.
+   white-space cambiado a normal para que los textos largos sean visibles sin cortes.
+   Original: white-space:nowrap + animation:marquee 12s linear infinite. */
 .marquee { overflow: hidden; white-space: normal; width: 100%; }
-.marquee-track { display: inline-block; }
-.marquee-fast { }
-.marquee-slow { }
+.marquee-track { display: inline-block; } /* antes: animation: marquee 12s linear infinite */
+.marquee-fast { } /* antes: animation-duration: 6s */
+.marquee-slow { } /* antes: animation-duration: 30s */
 
 /* Top banner */
 .top-banner {
@@ -61,9 +66,11 @@ body {
   border-bottom: 4px solid magenta;
   font-family: Papyrus, fantasy;
 }
+/* [Cambio 3] Enlaces de la navbar legibles y sin decoración de "deshabilitado".
+   Original: color:magenta + text-decoration: overline underline line-through. */
 .navbar-1 a {
-  color: #111827;
-  text-decoration: none;
+  color: #111827;        /* antes: magenta */
+  text-decoration: none; /* antes: overline underline line-through */
   font-weight: bold;
   padding: 4px 12px;
   font-size: 14px;
